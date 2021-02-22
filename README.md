@@ -2,9 +2,10 @@
 Este repositório guarda os trabalhos e projetos da disciplina.
 
 # Desenvolvedor:
-## Gustavo Zamboni do Carmo
+- Gustavo Zamboni do Carmo
 
 # Linguagens e Frameworks:
 - Python
 - C
 - Java
+- Dart
