@@ -39,7 +39,7 @@ public class Transacoes {
         // Validação do nome e ID do recebedor, e do saldo do pagador
         if((Integer.parseInt(dados[0]) == recebedor.conta.getIdConta()) &&
                 (dados[1] == recebedor.getNome()) &&
-                (pagador.conta.getSaldo() > Float.parseFloat(dados[2]))){
+                (pagador.conta.getSaldo() >= Float.parseFloat(dados[2]))){
 
         // Realizas as devidas transações, modificando o valor dos saldos das contas
         pagador.conta.setSaldo(pagador.conta.getSaldo() - Float.parseFloat(dados[2]));
@@ -51,5 +51,6 @@ public class Transacoes {
         }
 
     }
+
 
 }

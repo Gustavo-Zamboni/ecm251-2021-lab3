@@ -7,8 +7,6 @@ public class Usuarios {
     Contas conta;
 
     // Contrutor para atribuir os valores iniciais para cada usuário
-
-
     public Usuarios(String nome, int senha, String email, Contas conta) {
         Nome = nome;
         Senha = senha;
@@ -16,8 +14,19 @@ public class Usuarios {
         this.conta = conta;
     }
 
-    //getters do usuário
+    // getters do usuário
     public String getNome() {
         return Nome;
+    }
+
+    // Exibe as informações dos usuarios
+    @Override
+    public String toString() {
+        return "Usuarios{" +
+                "Nome='" + Nome + '\'' +
+                ", Senha=" + Senha +
+                ", email='" + email + '\'' +
+                ", conta=" + conta +
+                '}';
     }
 }

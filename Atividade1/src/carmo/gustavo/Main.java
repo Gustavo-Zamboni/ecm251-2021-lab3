@@ -16,9 +16,20 @@ public class Main {
         Usuarios u3 = new Usuarios("sol",123,"abc",c3);
 
         Transacoes transacao = new Transacoes();
-        System.out.println(transacao.gerarString(u1,500));
+        String pagamento = transacao.gerarString(u1,500);
+        System.out.println(pagamento);
 
+        System.out.println(u1.conta.getSaldo());
+        System.out.println(u2.conta.getSaldo());
+        System.out.println(u3.conta.getSaldo());
 
+        if(transacao.realizarPagamento(u3,u1,pagamento)){
+            System.out.println(u1.conta.getSaldo());
+            System.out.println(u2.conta.getSaldo());
+            System.out.println(u3.conta.getSaldo());
+        }else{
+            System.out.println("Não foi possível efetuar o pagamento!");
+        }
 
     }
 }

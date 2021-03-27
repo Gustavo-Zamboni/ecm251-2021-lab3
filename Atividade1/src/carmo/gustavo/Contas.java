@@ -5,8 +5,6 @@ public class Contas {
     private float Saldo;
 
     // Atribuir os valores iniciais para cada conta
-
-
     public Contas(int idConta, float saldo) {
         IdConta = idConta;
         Saldo = saldo;
@@ -24,4 +22,15 @@ public class Contas {
     public void setSaldo(float saldo) {
         Saldo = saldo;
     }
+
+    // Exibe as informações das contas
+    @Override
+    public String toString() {
+        return "Contas{" +
+                "IdConta=" + IdConta +
+                ", Saldo=" + Saldo +
+                '}';
+    }
 }
+
+
