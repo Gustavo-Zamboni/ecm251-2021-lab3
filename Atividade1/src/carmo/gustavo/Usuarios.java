@@ -7,16 +7,18 @@ public class Usuarios {
     Contas conta;
 
     // Contrutor para atribuir os valores iniciais para cada usuário
-    public Usuarios(String nome, int senha, String email, Contas conta) {
-        Nome = nome;
-        Senha = senha;
+
+
+    public Usuarios(String nome, int senha, String email, float saldo, int id) {
+        this.Nome = nome;
+        this.Senha = senha;
         this.email = email;
-        this.conta = conta;
+        this.conta = new Contas(saldo,id);
     }
 
     // getters do usuário
     public String getNome() {
-        return Nome;
+        return this.Nome;
     }
 
     // Exibe as informações dos usuarios

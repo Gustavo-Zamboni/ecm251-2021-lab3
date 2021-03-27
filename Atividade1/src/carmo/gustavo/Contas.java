@@ -5,22 +5,22 @@ public class Contas {
     private float Saldo;
 
     // Atribuir os valores iniciais para cada conta
-    public Contas(int idConta, float saldo) {
-        IdConta = idConta;
-        Saldo = saldo;
+    public Contas(float saldo, int id) {
+        this.IdConta += id;
+        this.Saldo = saldo;
     }
 
     //getters  e setters das contas
     public int getIdConta() {
-        return IdConta;
+        return this.IdConta;
     }
 
     public float getSaldo() {
-        return Saldo;
+        return this.Saldo;
     }
 
     public void setSaldo(float saldo) {
-        Saldo = saldo;
+        this.Saldo = saldo;
     }
 
     // Exibe as informações das contas

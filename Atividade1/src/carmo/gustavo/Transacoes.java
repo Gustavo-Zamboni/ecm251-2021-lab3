@@ -10,7 +10,7 @@ public class Transacoes {
         return r . nextInt (( max - min ) + 1 ) + min ;
     }
 
-    public String gerarString(Usuarios usuario, float valorRequisitado){
+    public static String gerarString(Usuarios usuario, float valorRequisitado){
         // Criação das variáveis do método
         String id;
         String nome;
@@ -30,7 +30,7 @@ public class Transacoes {
         return QR;
     }
 
-    public boolean realizarPagamento(Usuarios pagador, Usuarios recebedor, String solicitacao){
+    public static boolean realizarPagamento(Usuarios pagador, Usuarios recebedor, String solicitacao){
         // Efetua, se possível, o pagamento entre duas contas
 
         // Separa os componentes da string de solicitação
