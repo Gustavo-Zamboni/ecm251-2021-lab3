@@ -6,20 +6,16 @@ package carmo.gustavo;
 public class Main {
 
     public static void main(String[] args) {
-        Usuarios u1 = new Usuarios("alu",123,"abc",1000,1);
-        Usuarios u2 = new Usuarios("lua",456,"def",500,2);
-        Usuarios u3 = new Usuarios("sol",789,"ghi",3000,3);
+        Usuarios u1 = new Usuarios("Terra",123,"abc",1000,1);
+        Usuarios u2 = new Usuarios("Lua",456,"def",500,2);
+        Usuarios u3 = new Usuarios("Sol",789,"ghi",3000,3);
 
 
-        Transacoes transacao = new Transacoes();
-        String pagamento = transacao.gerarString(u1,500);
+        String pagamento = Transacoes.gerarString(u1,500);
         System.out.println(pagamento);
 
-        System.out.println(u1.conta.getSaldo());
-        System.out.println(u2.conta.getSaldo());
-        System.out.println(u3.conta.getSaldo());
 
-        if(transacao.realizarPagamento(u3,u1,pagamento)){
+        if(Transacoes.realizarPagamento(u3,u1,pagamento)){
             System.out.println(u1.conta.getSaldo());
             System.out.println(u2.conta.getSaldo());
             System.out.println(u3.conta.getSaldo());
