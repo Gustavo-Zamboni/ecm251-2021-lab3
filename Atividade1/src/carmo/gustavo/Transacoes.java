@@ -10,7 +10,7 @@ public class Transacoes {
         return r . nextInt (( max - min ) + 1 ) + min ;
     }
 
-    public String gerarString(Contas conta, Usuarios usuario, float valorRequisitado){
+    public String gerarString(Usuarios usuario, float valorRequisitado){
         // Criação das variáveis do método
         String id;
         String nome;
@@ -19,7 +19,7 @@ public class Transacoes {
         String numeroRandomico;
 
         // Obter as variáveis para gerar o QRcode
-        id = Integer.toString(conta.getIdConta());
+        id = Integer.toString(usuario.conta.getIdConta());
         nome = usuario.getNome();
         valor = Float.toString(valorRequisitado);
         numeroRandomico = Integer.toString(getRandomNumberInRange(1000,9999));
@@ -30,9 +30,26 @@ public class Transacoes {
         return QR;
     }
 
-    public boolean realizarPagamento(){
+    public boolean realizarPagamento(Usuarios pagador, Usuarios recebedor, String solicitacao){
         // Efetua, se possível, o pagamento entre duas contas
+
+        // Separa os componentes da string de solicitação
+        String[] dados = solicitacao.split(";");
+
+        // Validação do nome e ID do recebedor, e do saldo do pagador
+        if((Integer.parseInt(dados[0]) == recebedor.conta.getIdConta()) &&
+                (dados[1] == recebedor.getNome()) &&
+                (pagador.conta.getSaldo() > Float.parseFloat(dados[2]))){
+
+        // Realizas as devidas transações, modificando o valor dos saldos das contas
+        pagador.conta.setSaldo(pagador.conta.getSaldo() - Float.parseFloat(dados[2]));
+        recebedor.conta.setSaldo(recebedor.conta.getSaldo() + Float.parseFloat(dados[2]));
+
         return true;
+        }else{
+            return false;
+        }
+
     }
 
 }
