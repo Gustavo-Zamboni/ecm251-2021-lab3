@@ -14,6 +14,9 @@ public class Main {
         // Cria a lista de usuários do programa
         Usuarios[] listaUsuarios = new Usuarios[3];
 
+        // Cria a string do pagamento para gerar o Qrcode
+        String pagamento = "";
+
         int op = 10;
         do{
             // Exibe na tela as opções do programa
@@ -28,9 +31,6 @@ public class Main {
             // Lê a escolha do usuário
             op = ler.nextInt();
 
-            // Cria a string do pagamento para gerar o Qrcode
-            String pagamento = "";
-
             switch (op){
                 case 0:
                     // Encerra o programa
@@ -39,7 +39,7 @@ public class Main {
                 case 1:
                     // Cria os novos usuários
                     for(int i=0; i<3; i++){
-                        System.out.println("Digite o nome do Usuário" + Integer.toString(i) + ":");
+                        System.out.println("Digite o nome do Usuário (" + Integer.toString(i) + "):");
                         String nome = ler.next();
                         System.out.println("Digite a senha:");
                         int senha = ler.nextInt();
@@ -65,7 +65,7 @@ public class Main {
                     System.out.println("OBS: A contegem de id começa em 0");
                     int idModificacao = ler.nextInt();
                     if(idModificacao >= listaUsuarios.length){
-                        System.out.println("Id não registrado no sistema!");
+                        System.out.println("id não registrado no sistema!");
                         break;
                     }else {
                         do {
@@ -74,6 +74,10 @@ public class Main {
                             System.out.println("1 - Alterar nome");
                             System.out.println("2 - Alterar senha");
                             System.out.println("3 - Alterar email");
+
+                            // Faz a leitura da escolha do usuário
+                            opModificacao = ler.nextInt();
+
                             switch (opModificacao) {
                                 case 0:
                                     break;
@@ -106,7 +110,7 @@ public class Main {
                 case 3:
                     // Exibe todos as informações dos usuários do sistema
                     for (int i = 0; i < listaUsuarios.length; i++) {
-                        System.out.println(listaUsuarios.toString());
+                        System.out.println(listaUsuarios[i].toString());
                     }
                     break;
                 case 4:
@@ -123,12 +127,17 @@ public class Main {
                     int idPagador = ler.nextInt();
                     System.out.println("Digite o id do usuário que receberá o pagamento:");
                     int idRecebedor = ler.nextInt();
-                    if(Transacoes.realizarPagamento(listaUsuarios[idPagador],listaUsuarios[idRecebedor],pagamento)){
-                        System.out.println("Transação realizada com sucesso!");
+                    if(idPagador >= listaUsuarios.length || idRecebedor >= listaUsuarios.length){
+                        System.out.println("Usuários não cadastrados!");
                         break;
                     }else{
-                        System.out.println("Não foi possível efetuar o pagamento");
-                        break;
+                        if(Transacoes.realizarPagamento(listaUsuarios[idPagador],listaUsuarios[idRecebedor],pagamento)){
+                            System.out.println("Transação realizada com sucesso!");
+                            break;
+                        }else{
+                            System.out.println("Não foi possível efetuar o pagamento!");
+                            break;
+                        }
                     }
                 default:
                     // Exibe a mensagem de erro
@@ -137,6 +146,6 @@ public class Main {
             }
 
         }while (op != 0);
-        
+
     }
 }
