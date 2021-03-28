@@ -16,9 +16,21 @@ public class Usuarios {
         this.conta = new Contas(saldo,id);
     }
 
-    // getters do usuário
+    // getters  e setters do usuário
     public String getNome() {
         return this.Nome;
+    }
+
+    public void setNome(String nome) {
+        Nome = nome;
+    }
+
+    public void setSenha(int senha) {
+        Senha = senha;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     // Exibe as informações dos usuarios
