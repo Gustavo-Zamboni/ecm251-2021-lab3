@@ -17,7 +17,7 @@ public class Main {
         // Cria a string do pagamento para gerar o Qrcode
         String pagamento = "";
 
-        int op = 10;
+        int op;
         do{
             // Exibe na tela as opções do programa
             System.out.println("Digite a funcionalidade desejada:");
@@ -41,7 +41,7 @@ public class Main {
                     for(int i=0; i<3; i++){
                         System.out.println("Digite o nome do Usuário (" + Integer.toString(i) + "):");
                         String nome = ler.next();
-                        System.out.println("Digite a senha:");
+                        System.out.println("Digite a senha (numérica):");
                         int senha = ler.nextInt();
                         System.out.println("Digite o e-mail:");
                         String email = ler.next();
@@ -58,7 +58,7 @@ public class Main {
                     // Modifica os dados de um usuário já existente
 
                     // Inicializa a variável do switch case
-                    int opModificacao = 11;
+                    int opModificacao;
 
                     // Verifica se o id digitado existe na lista de usuários do programa
                     System.out.println("Digite o id da conta a ser modificada:");
@@ -80,6 +80,7 @@ public class Main {
 
                             switch (opModificacao) {
                                 case 0:
+                                    System.out.println("Modificações Salvas!");
                                     break;
                                 case 1:
                                     // Altera o nome do usuário
@@ -117,6 +118,12 @@ public class Main {
                     // Gera uma solicitação de pagamento
                     System.out.println("Digite o id do usuário que fará a solicitação:");
                     int idSolicitacao = ler.nextInt();
+
+                    // Verifica se o usuário está cadastrado
+                    if(idSolicitacao >= listaUsuarios.length){
+                        System.out.println("Usuário não cadastrado!");
+                        break;
+                    }
                     System.out.println("Digite o valor que será requisitado:");
                     float valoRequisitado = ler.nextFloat();
                     pagamento = Transacoes.gerarString(listaUsuarios[idSolicitacao],valoRequisitado);
