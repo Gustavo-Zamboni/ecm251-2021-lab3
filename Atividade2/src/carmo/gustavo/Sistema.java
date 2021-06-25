@@ -83,6 +83,7 @@ public class Sistema implements Auxiliar{
                             idMembro = ler.nextInt();
                             Membro mobileMember = new MobileMember(nomeMembro,emailMembro,idMembro);
                             listaMobileMembers.add(mobileMember);
+                            System.out.println("Membro adicionado!");
                             break;
                         case (2):
                             funcaoMembro = TiposMembros.HEAVYLIFTER;
@@ -94,6 +95,7 @@ public class Sistema implements Auxiliar{
                             idMembro = ler.nextInt();
                             Membro heavyLifter = new HeavyLifter(nomeMembro,emailMembro,idMembro);
                             listaHeavyLifters.add(heavyLifter);
+                            System.out.println("Membro adicionado!");
                             break;
                         case(3):
                             funcaoMembro = TiposMembros.SCRIPTGUY;
@@ -105,6 +107,7 @@ public class Sistema implements Auxiliar{
                             idMembro = ler.nextInt();
                             Membro scriptGuy = new ScriptGuys(nomeMembro,emailMembro,idMembro);
                             listaScriptGuys.add(scriptGuy);
+                            System.out.println("Membro adicionado!");
                             break;
                         case(4):
                             funcaoMembro = TiposMembros.BIGBROTHER;
@@ -116,6 +119,7 @@ public class Sistema implements Auxiliar{
                             idMembro = ler.nextInt();
                             Membro bigBrother = new BigBrother(nomeMembro,emailMembro,idMembro);
                             listaBigBrothers.add(bigBrother);
+                            System.out.println("Membro adicionado!");
                             break;
                         default:
                             System.out.println("Número inválido!");
@@ -136,24 +140,28 @@ public class Sistema implements Auxiliar{
                             posicaoLista = ler.nextInt();
                             posicaoLista -= 1;
                             listaMobileMembers.remove(posicaoLista);
+                            System.out.println("Membro Removido!");
                             break;
                         case (2):
                             System.out.println("Posição na lista de membros(começa em 1):");
                             posicaoLista = ler.nextInt();
                             posicaoLista -= 1;
                             listaHeavyLifters.remove(posicaoLista);
+                            System.out.println("Membro Removido!");
                             break;
                         case (3):
                             System.out.println("Posição na lista de membros(começa em 1):");
                             posicaoLista = ler.nextInt();
                             posicaoLista -= 1;
                             listaScriptGuys.remove(posicaoLista);
+                            System.out.println("Membro Removido!");
                             break;
                         case (4):
                             System.out.println("Posição na lista de membros(começa em 1):");
                             posicaoLista = ler.nextInt();
                             posicaoLista -= 1;
                             listaBigBrothers.remove(posicaoLista);
+                            System.out.println("Membro Removido!");
                             break;
                         default:
                             System.out.println("Número inválido!");
@@ -161,37 +169,37 @@ public class Sistema implements Auxiliar{
                     }
                     break;
                 case (4):
-                    System.out.println("Mobile Members");
+                    System.out.println("-------------------Mobile Members-------------------");
                     for(Membro membro : listaMobileMembers) {
                         System.out.println(membro.postarMensagem(horaSistema));
                     }
-                    System.out.println("Heavy Lifters");
+                    System.out.println("-------------------Heavy Lifters--------------------");
                     for(Membro membro : listaHeavyLifters) {
                         System.out.println(membro.postarMensagem(horaSistema));
                     }
-                    System.out.println("Script Guys");
+                    System.out.println("-------------------Script Guys----------------------");
                     for(Membro membro : listaScriptGuys) {
                         System.out.println(membro.postarMensagem(horaSistema));
                     }
-                    System.out.println("Big Brothers");
+                    System.out.println("-------------------Big Brothers---------------------");
                     for(Membro membro : listaBigBrothers) {
                         System.out.println(membro.postarMensagem(horaSistema));
                     }
                     break;
                 case(5):
-                    System.out.println("Mobile Members");
+                    System.out.println("-------------------Mobile Members-------------------");
                     for(Membro membro : listaMobileMembers) {
                         System.out.println(membro.apresentacao());
                     }
-                    System.out.println("Heavy Lifters");
+                    System.out.println("-------------------Heavy Lifters--------------------");
                     for(Membro membro : listaHeavyLifters) {
                         System.out.println(membro.apresentacao());
                     }
-                    System.out.println("Script Guys");
+                    System.out.println("-------------------Script Guys----------------------");
                     for(Membro membro : listaScriptGuys) {
                         System.out.println(membro.apresentacao());
                     }
-                    System.out.println("Big Brothers");
+                    System.out.println("-------------------Big Brothers---------------------");
                     for(Membro membro : listaBigBrothers) {
                         System.out.println(membro.apresentacao());
                     }
