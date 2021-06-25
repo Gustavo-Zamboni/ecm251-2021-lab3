@@ -178,6 +178,24 @@ public class Sistema implements Auxiliar{
                         System.out.println(membro.postarMensagem(horaSistema));
                     }
                     break;
+                case(5):
+                    System.out.println("Mobile Members");
+                    for(Membro membro : listaMobileMembers) {
+                        System.out.println(membro.apresentacao());
+                    }
+                    System.out.println("Heavy Lifters");
+                    for(Membro membro : listaHeavyLifters) {
+                        System.out.println(membro.apresentacao());
+                    }
+                    System.out.println("Script Guys");
+                    for(Membro membro : listaScriptGuys) {
+                        System.out.println(membro.apresentacao());
+                    }
+                    System.out.println("Big Brothers");
+                    for(Membro membro : listaBigBrothers) {
+                        System.out.println(membro.apresentacao());
+                    }
+                    break;
                 case(6):
                     System.out.println("Sistema Finalizado!");
                     break;
