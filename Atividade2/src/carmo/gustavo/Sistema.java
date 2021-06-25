@@ -1,19 +1,16 @@
 package carmo.gustavo;
 
-import carmo.gustavo.enums.TiposMembros;
 import carmo.gustavo.interfaces.Auxiliar;
-
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Sistema implements Auxiliar {
 
     public void Executar(){
         Scanner ler = new Scanner(System.in);
-        String nomeUsuario = "";
-        int idUsuario = 0;
-        String categoriaUsuario = "";
+        String nomeUsuario;
+        int idUsuario;
+        String categoriaUsuario;
 
         System.out.println("------Bem vindo ao gerenciador da MAsK_S0c13ty------");
         System.out.println("Insira seus dados:");
@@ -28,6 +25,17 @@ public class Sistema implements Auxiliar {
         } catch (Exception e) {
             System.out.println("Falha ao criar o arquivo!");
         }
+        System.out.println("----------------------------------------------------");
+        System.out.println("-----------------------Menu-------------------------");
+        System.out.println("Horário de trabalho: REGULAR");
+        System.out.println("1. Trocar horário do sistema");
+        System.out.println("2. Adicionar membros");
+        System.out.println("3. Postar mensagem dos integrantes");
+        System.out.println("4. Relatório dos membros (apresentação)");
+        System.out.println("5. Sair do Programa");
+
+        
+
     }
 
     @Override
