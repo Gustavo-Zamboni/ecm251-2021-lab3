@@ -1,22 +1,24 @@
 package carmo.gustavo;
 
-import carmo.gustavo.enums.HorarioSistema;
-import carmo.gustavo.models.*;
+import carmo.gustavo.interfaces.Auxiliar;
+import java.util.Scanner;
 
-public class Sistema {
+public class Sistema implements Auxiliar {
     public void Executar(){
-        Membro mb = new MobileMember("José","@gmail",1);
-        Membro hl = new HeavyLifter("Lucas","@gmail",1);
-        Membro sg = new ScriptGuys("Jonas","@gmail",1);
-        Membro bb = new BigBrother("Thiago","@gmail",1);
+        Scanner ler = new Scanner(System.in);
+        String nomeUsuario = "";
+        int idUsuario = 0;
+        String categoriaUsuario = "";
 
-        System.out.println(mb.apresentacao());
-        System.out.println(mb.postarMensagem(HorarioSistema.REGULAR));
-        System.out.println(hl.apresentacao());
-        System.out.println(hl.postarMensagem(HorarioSistema.REGULAR));
-        System.out.println(sg.apresentacao());
-        System.out.println(sg.postarMensagem(HorarioSistema.REGULAR));
-        System.out.println(bb.apresentacao());
-        System.out.println(bb.postarMensagem(HorarioSistema.REGULAR));
-    }
+        System.out.println("------Bem vindo ao gerenciador da MAsK_S0c13ty------");
+        System.out.println("Insira seus dados:");
+        System.out.println("Nome:");
+        nomeUsuario = ler.next();
+        System.out.println("categoria:");
+        categoriaUsuario = ler.next();
+        System.out.println("id:");
+        idUsuario = ler.nextInt();
+
+        }
+
 }
