@@ -11,5 +11,5 @@ public abstract class Membro  implements PostarMensagem, Apresentação {
     protected String email;
     protected String postagem;
     protected TiposMembros funcao;
-    
+
 }
