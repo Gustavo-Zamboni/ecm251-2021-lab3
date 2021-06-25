@@ -3,9 +3,7 @@ package carmo.gustavo;
 import carmo.gustavo.enums.HorarioSistema;
 import carmo.gustavo.enums.TiposMembros;
 import carmo.gustavo.interfaces.Auxiliar;
-import carmo.gustavo.models.HeavyLifter;
-import carmo.gustavo.models.Membro;
-import carmo.gustavo.models.MobileMember;
+import carmo.gustavo.models.*;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -21,13 +19,14 @@ public class Sistema implements Auxiliar{
         ArrayList<Membro> listaMobileMembers= new ArrayList<>();
         ArrayList<Membro> listaHeavyLifters = new ArrayList<>();
         ArrayList<Membro> listaScriptGuys = new ArrayList<>();
+        ArrayList<Membro> listaBigBrothers = new ArrayList<>();
 
 
         System.out.println("------Bem vindo ao gerenciador da MAsK_S0c13ty------");
         System.out.println("Insira seus dados:");
-        System.out.println("Nome:");
+        System.out.println("Nome(sem espaços):");
         nomeUsuario = ler.next();
-        System.out.println("categoria:");
+        System.out.println("categoria(sem espaços):");
         categoriaUsuario = ler.next();
         System.out.println("id:");
         idUsuario = ler.nextInt();
@@ -45,7 +44,7 @@ public class Sistema implements Auxiliar{
         String emailMembro;
         TiposMembros funcaoMembro;
         int idMembro;
-
+        int posicaoLista;
 
         while (opMenu != 6) {
             System.out.println("-----------------------Menu-------------------------");
@@ -100,9 +99,26 @@ public class Sistema implements Auxiliar{
                             listaHeavyLifters.add(heavyLifter);
                             break;
                         case(3):
-
+                            funcaoMembro = TiposMembros.SCRIPTGUY;
+                            System.out.println("Nome(sem espaços):");
+                            nomeMembro = ler.next();
+                            System.out.println("Email:");
+                            emailMembro = ler.next();
+                            System.out.println("Id:");
+                            idMembro = ler.nextInt();
+                            Membro scriptGuy = new ScriptGuys(nomeMembro,emailMembro,idMembro);
+                            listaScriptGuys.add(scriptGuy);
                             break;
                         case(4):
+                            funcaoMembro = TiposMembros.BIGBROTHER;
+                            System.out.println("Nome(sem espaços):");
+                            nomeMembro = ler.next();
+                            System.out.println("Email:");
+                            emailMembro = ler.next();
+                            System.out.println("Id:");
+                            idMembro = ler.nextInt();
+                            Membro bigBrother = new BigBrother(nomeMembro,emailMembro,idMembro);
+                            listaBigBrothers.add(bigBrother);
                             break;
                         default:
                             System.out.println("Número inválido!");
@@ -110,6 +126,20 @@ public class Sistema implements Auxiliar{
                     }
                     break;
                 case(3):
+                    System.out.println("Selecione o tipo de membro");
+                    System.out.println("1. Mobile Member");
+                    System.out.println("2. Heavy Lifter");
+                    System.out.println("3. Script Guy");
+                    System.out.println("4. Big Brother");
+                    System.out.println("Tipo:");
+                    tipoMembro = ler.nextInt();
+                    switch (tipoMembro){
+                        case (1):
+                            System.out.println("Posição na lista de membros(começa em 1):");
+                            posicaoLista = ler.nextInt();
+                            posicaoLista -= 1;
+                            listaMobileMembers.remove(posicaoLista);
+                    }
                     break;
                 case(6):
                     System.out.println("Sistema Finalizado!");
