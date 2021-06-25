@@ -4,7 +4,7 @@ import carmo.gustavo.enums.HorarioSistema;
 import carmo.gustavo.enums.TiposMembros;
 
 public class MobileMember extends Membro{
-    public MobileMember(String nome, String email, String funcao, int id) {
+    public MobileMember(String nome, String email, int id) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -13,7 +13,9 @@ public class MobileMember extends Membro{
 
     @Override
     public String apresentacao() {
-        return null;
+        String apresentar;
+        apresentar = "Oi sou o " + nome + ", Mobile Member da Mask_Society.";
+        return apresentar;
     }
 
     @Override
