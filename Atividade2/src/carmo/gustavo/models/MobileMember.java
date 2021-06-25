@@ -19,7 +19,10 @@ public class MobileMember extends Membro{
     }
 
     @Override
-    public String postarMensagem(HorarioSistema horarioSistema, TiposMembros tipoMembros) {
-        return null;
+    public String postarMensagem(HorarioSistema horarioSistema) {
+        if(horarioSistema.equals(HorarioSistema.REGULAR))
+            return "Happy Coding!";
+        else
+            return "Happy_C0d1ng.Maskers";
     }
 }
